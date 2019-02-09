@@ -1,1 +1,8 @@
 {% extends "base.html" %}
+
+{% block admin-panel %}
+    <a href="{% url 'post_create_url' %}" class="btn btn-light">Create Post</a>
+    <a href="{% url 'tag_create_url' %}" class="btn btn-light">Create Tag</a>
+    <a href="{{ admin_object.get_update_url }}" class="btn btn-light"  style="{% if not detail %} display:none; {% endif %}">Edit</a>
+    <a href="{{ admin_object.get_delete_url }}" class="btn btn-danger" style="{% if not detail %} display:none; {% endif %}">Delete</a>
+{% endblock %}
